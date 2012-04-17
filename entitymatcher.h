@@ -8,7 +8,7 @@ You can match any Entites. For example it could be games, films, books, board ga
 class EntityMatcher{
 public:
 	// if we have 'entities' from previous time we will load them
-	EntityMatcher(std::vector<int> entities); //TODO make default (if it is a fresh start)
+	EntityMatcher(std::vector<int> entities = std::vector<int>()); //TODO make default (if it is a fresh start)
 	~EntityMatcher();
 
 	// return a const ref to avoid copying
