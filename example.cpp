@@ -13,4 +13,5 @@ int main(){
 	std::string userName = "Stals";
 	std::vector<int> emptyVec;
 	EntityMatcher entityMatcher(emptyVec);
+	entityMatcher.match(548,137,1);
 }
