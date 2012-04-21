@@ -13,26 +13,30 @@ Mathcing algorithm:
 		Winner goes above the looser, both entities added in the end of a list (push_back(winner), push_back(looser))
 */
 
-#include <string>
-#include <vector>
+#ifndef ENTITYMATCHER_H
+#define ENTITYMATCHER_H
+
+#include <list>
 
 class EntityMatcher{
 public:
 	// if we have 'entities' from previous time we will load them
-	EntityMatcher(std::vector<int> entities = std::vector<int>()); //TODO make default (if it is a fresh start)
+	EntityMatcher(std::list<int> entities = std::list<int>()); 
 	~EntityMatcher();
 
-	// return a const ref to avoid copying
-	const std::vector<int>& getEntities(){
-		return entities;
-	}
+	// Warning: returns a const ref to avoid copying
+	const std::list<int>& getEntities();
 
-	// mathes 2 entities changing their rating. Variable choice could equals to 1 or 2 meaning wich entity won (entity with id1 or id2).
+	// mathes 2 entities changing their rating. Variable 'choice' could equals to 1 or 2 meaning wich entity won (entity with id1 or id2).
 	void match(int id1, int id2, int choice);
 
 private:
-	// Todo rewrite as a list and compare speed
+	// Todo rewrite using my method and compare speed
 	// Stores entities ID
-	std::vector<int> entities; 
+	std::list<int> entities;
+	struct Entity;
+	Entity find(int id);
 
 };
+
+#endif
