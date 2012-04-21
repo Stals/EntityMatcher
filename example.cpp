@@ -8,7 +8,6 @@
 #include <iostream>
 #include <string>
 #include <list>
-#include <windows.h>
 
 // loads ratings from a file 
 std::list<int> loadRatings();
@@ -38,6 +37,4 @@ int main(){
 	entityMatcher.match(15,78,2);	// 78 15 45
 	entityMatcher.match(78,99,1);	// 78 15 45 99
 	printEntityList(entityMatcher.getEntities());
-
-	system("pause");
 }
