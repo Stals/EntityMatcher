@@ -38,20 +38,20 @@ EntityMatcher::Entity EntityMatcher::find(int id){
 	return Entity(id, entities.end(), 0);
 }
 
-// mathes 2 entities changing their rating. Variable 'choice' could equals to 1 or 2 meaning wich entity won (entity with id1 or id2).
-void EntityMatcher::match(int id1, int id2, int choice){
+// mathes 2 entities changing their rating. Variable 'choice' could equals to 1 or 2 meaning wich entity won (entity with id_1 or id_2).
+void EntityMatcher::match(int id_1, int id_2, int choice){
 	//TODO can this be done in a better way?
 	/*
 	if (choice == 1){
-		Entity winner = find(id1);
-		Entity looser = find(id2);
+		Entity winner = find(id_1);
+		Entity looser = find(id_2);
 	}else{
-		Entity winner = find(id2);
-		Entity looser = find(id1;)
+		Entity winner = find(id_2);
+		Entity looser = find(id_1;)
 	}
 	*/
-	Entity winner = (choice == 1)? find(id1) : find(id2);
-	Entity looser = (choice == 1)? find(id2) : find(id1);
+	Entity winner = (choice == 1)? find(id_1) : find(id_2);
+	Entity looser = (choice == 1)? find(id_2) : find(id_1);
 
 	bool winnerInEntities = winner.position != 0;  // winner.iter != entities.end();
 	bool looserInEntities = looser.position != 0;  // looser.iter != entities.end();

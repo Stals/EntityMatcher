@@ -27,8 +27,8 @@ public:
 	// Warning: returns a const ref to avoid copying
 	const std::list<int>& getEntities();
 
-	// mathes 2 entities changing their rating. Variable 'choice' could equals to 1 or 2 meaning wich entity won (entity with id1 or id2).
-	void match(int id1, int id2, int choice);
+	// mathes 2 entities changing their rating. Variable 'choice' could equals to 1 or 2 meaning wich entity won (entity with id_1 or id_2).
+	void match(int id_1, int id_2, int choice);
 
 private:
 	// Todo rewrite using my method and compare speed
